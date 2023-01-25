@@ -4,7 +4,7 @@
     <div class="main">
       <TheSidebar />
       <Post />
-      <TheSidebar :side="1" />
+      <TheSidebar />
     </div>
   </div>
 </template>
@@ -27,7 +27,7 @@ export default {
 
 .main {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   background-color: #f5f5f5;
 }
 </style>
