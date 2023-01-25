@@ -1,0 +1,37 @@
+:root {
+    --input__height: 40px;
+    --border__radius: 6px;
+    --border__color: #afafaf;
+}
+
+.input {
+    width: 100%;
+    height: var(--input__height);
+    border-radius: var(--border__radius);
+    border: 1px solid var(--border__color);
+    padding: 6.5px 8px;
+    outline: none;
+}
+
+.input__wrapper {
+    position: relative;
+}
+
+.input-login {
+    width: 100%;
+    height: 44px;
+    padding: 0px 12px;
+    border-radius: 4px;
+    border: 1px solid #dadce0;
+    font-size: 13px;
+    background-color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    outline: none;
+}
+
+.input-login:focus {
+    border-radius: 4px;
+    border: 1px solid #39c0ed;
+}

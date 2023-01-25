@@ -1,0 +1,36 @@
+@import url(font.css);
+
+:root {
+    --text--hover: #2F3AB2;
+    --wrapper--hover: #e5e6f6;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: T Regular;
+    font-size: 15px
+}
+
+body,
+p,
+ul {
+    margin: 0;
+}
+
+ul {
+    list-style-type: none;
+    padding: unset;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

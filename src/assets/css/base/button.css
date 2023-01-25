@@ -1,0 +1,20 @@
+:root {
+    --default: #1aa4c8;
+    --hover: #0582a2;
+    --active: #28b7dc;
+    --focus: var(--default);
+    --disabled: #8cd1e3;
+    --border--focus: #D1EDF4;
+    --delete-dialog--default: #31B9E2;
+    --button-cancel--hover: #1AA4C8;
+    --outline-button--disabled: #F5F5F5;
+    --sub-button: #3b49bf;
+    --outline-button__border: #afafaf;
+}
+
+.button {
+    border-radius: 6px;
+    background-color: #fff;
+    cursor: pointer;
+    height: 40px;
+}
