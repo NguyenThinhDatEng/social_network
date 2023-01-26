@@ -14,6 +14,7 @@
             <div class="text__wrapper text">Tuần</div>
             <div class="text__wrapper text">Tháng</div>
             <div class="text__wrapper text">Năm</div>
+            <div class="text__wrapper text">Tất cả</div>
           </div>
         </div>
         <Post />

@@ -68,6 +68,9 @@ export default {
 <style scoped>
 @import url(@/assets/css/icon.css);
 .side-bar {
+  position: fixed;
+  top: 56px;
+  left: 120px;
   width: 20%;
 }
 

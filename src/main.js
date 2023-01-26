@@ -1,6 +1,9 @@
 import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./routers";
+import vClickOutside from "click-outside-vue3";
+import VueSelect from "vue-select";
+
 /* import font awesome icon component */
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
@@ -22,8 +25,11 @@ library.add(faBell, faUser, faHeart, faComment, faBookmark, bookmark);
 
 const app = createApp(App);
 
+// register globally
+app.component("v-select", VueSelect);
 /* add font awesome icon component */
 app.component("font-awesome-icon", FontAwesomeIcon);
 
 app.use(router);
+app.use(vClickOutside);
 app.mount("#app");

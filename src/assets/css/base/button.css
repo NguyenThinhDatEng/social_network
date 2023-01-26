@@ -12,9 +12,16 @@
     --outline-button__border: #afafaf;
 }
 
-.button {
-    border-radius: 6px;
-    background-color: #fff;
+button {
     cursor: pointer;
+}
+
+.button {
+    border: none;
+    border-radius: 6px;
     height: 40px;
+    min-width: 80px;
+    cursor: pointer;
+    outline: none;
+    background-color: #fff;
 }

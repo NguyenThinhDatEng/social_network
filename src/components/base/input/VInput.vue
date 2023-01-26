@@ -4,6 +4,7 @@
     <label v-if="label != ''">
       {{ label }} <span v-show="isRequired" style="color: red">*</span></label
     >
+
     <!-- Password input -->
     <div v-if="isPassword" class="password-login">
       <input

@@ -30,7 +30,6 @@ export default {
   align-items: center;
   justify-content: center;
   border-radius: 4px;
-  margin-left: 8px;
 }
 
 .button--sub {

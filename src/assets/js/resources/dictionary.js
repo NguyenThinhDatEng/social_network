@@ -2,6 +2,9 @@ export default {
   action: {
     add: {
       VN: "Thêm",
+      image: {
+        VN: "Thêm ảnh",
+      },
     },
     close: {
       VN: "Đóng",

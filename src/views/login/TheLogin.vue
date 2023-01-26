@@ -33,7 +33,7 @@
                 <!-- password -->
                 <VInput
                   :input-class="'input-login'"
-                  :isPassword="true"
+                  :is-password="true"
                   :label="Dictionary.info.user.password.VN"
                   :is-error="isError.password"
                   v-model="password"

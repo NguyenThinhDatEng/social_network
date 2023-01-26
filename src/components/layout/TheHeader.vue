@@ -1,4 +1,5 @@
 <template>
+  <!-- Header -->
   <div class="header">
     <!-- Nội dung header -->
     <div class="header__content">
@@ -30,6 +31,7 @@
         <SubButton
           class="right__button"
           :button-content="Dictionary.action.create.post.VN"
+          @click="handleOnClickCreatePost"
         />
         <!-- font awesome icon -->
         <div class="icon__wrapper">
@@ -42,12 +44,15 @@
       </div>
     </div>
   </div>
+  <!-- Popup: Create a new post -->
+  <PostDetail v-if="isShowPopup" @close-popup="closePopup" />
 </template>
 
 <script>
 // Components
 import SearchInput from "@/components/base/input/VSearchInput.vue";
 import SubButton from "@/components/base/button/VSubButton.vue";
+import PostDetail from "@/components/base/post/VPostDetail.vue";
 // Resources
 import Dictionary from "@/assets/js/resources/dictionary";
 import Resource from "@/assets/js/resources";
@@ -55,7 +60,7 @@ import { getCookie } from "@/assets/js/common/function";
 
 export default {
   name: "TheHeader",
-  components: { SearchInput, SubButton },
+  components: { SearchInput, SubButton, PostDetail },
   props: {},
   emits: [],
 
@@ -73,6 +78,10 @@ export default {
       this.$router.push(Resource.routes.login);
     },
 
+    handleOnClickCreatePost: function () {
+      this.openPopup(0);
+    },
+
     /**
      * @description xác thực người dùng
      * @author NVThinh 25/1/2023
@@ -85,10 +94,30 @@ export default {
         this.isAuthorized = false;
       }
     },
+
+    /**
+     * @description Mở popup
+     * @param {Number} mode Chế độ hiển thị popup
+     * @author NVThinh 26/1/2023
+     */
+    openPopup: function (mode) {
+      this.mode = mode;
+      this.isShowPopup = true;
+    },
+
+    /**
+     * @description Đóng popup
+     * @author NVThinh 26/01/2023
+     */
+    closePopup: function () {
+      this.isShowPopup = false;
+    },
   },
   data() {
     return {
+      isShowPopup: false, // Hiển thị popup
       isAuthorized: false, // true nếu người dùng đăng nhập thành công
+      mode: 0, // Chế độ hiển thị popup
       // Resources
       Dictionary,
     };

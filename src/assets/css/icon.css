@@ -8,6 +8,11 @@
     width: 40px;
 }
 
+.icon--18px {
+    width: 18px;
+    height: 18px;
+}
+
 .icon--24px {
     width: 24px;
     height: 24px;
@@ -31,4 +36,9 @@
 
 .icon--guide {
     background-image: url(../img/icons/guide-book.png);
+}
+
+.icon--close {
+    background-image: url(../img/icons/base/app-icon.png);
+    background-position: -375px -287px;
 }

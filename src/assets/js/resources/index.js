@@ -11,6 +11,12 @@ export default {
     login_with: "Đăng nhập để tương tác với ",
     copyright: "Copyright © 2023 TH Group",
   },
+  // Tên popup qua từng chế độ chọn
+  popup: {
+    title: {
+      create: "Tạo bài đăng",
+    },
+  },
   // Tooltip
   Title: {
     home: "Trang chủ",
@@ -86,15 +92,7 @@ export default {
     residual_value: "Giá trị còn lại",
     feature: "Tính năng",
   },
-  // Tên popup qua từng chế độ chọn
-  PopupTitle: {
-    add: "Thêm mới tài sản",
-    edit: "Sửa tài sản",
-    duplicate: "Nhân bản tài sản",
-    add_voucher: "Thêm chứng từ ghi tăng",
-    select_increment_asset: "Chọn tài sản ghi tăng",
-    edit_increment_asset: "Sửa chứng từ ghi tăng",
-  },
+
   // Nhãn các ô input trong popup
   PopupLabel: {
     fixed_asset_code: "Mã tài sản",
