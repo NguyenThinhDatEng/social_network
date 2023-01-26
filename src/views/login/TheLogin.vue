@@ -70,6 +70,7 @@
 import Resource from "@/assets/js/resources";
 import Enum from "@/assets/js/enum";
 import Dictionary from "@/assets/js/resources/dictionary";
+import { setCookie } from "@/assets/js/common/function";
 // Components
 import ToastVue from "@/components/base/toast/VToast.vue";
 import LoaderVue from "@/components/more/VLoader.vue";
@@ -109,9 +110,15 @@ export default {
             this.isError.password = true;
           }
         } else {
-          console.log("im here");
+          // Tạo 1 cookie tạm thời
+          document.cookie = setCookie("username", this.username, 1 / 24);
           // Nếu thỏa mãn hết các điều kiện
-          this.$router.push("/");
+          if (this.username == "TheWill" && this.password == "asdf")
+            this.$router.push("/");
+          else {
+            this.toast.content = "Thông tin đăng nhập không hợp lệ";
+            this.openToast();
+          }
         }
       } catch (error) {
         console.log(error);
@@ -170,6 +177,7 @@ export default {
       Resource,
       Enum,
       Dictionary,
+      Function,
       fields: {
         account: "account",
         password: "password",

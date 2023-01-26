@@ -109,7 +109,11 @@ export default {
 
 <style scoped>
 .post {
-  width: 40%;
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #afafaf;
+  border-radius: 6px;
+  background-color: #fff;
 }
 
 .post__header {

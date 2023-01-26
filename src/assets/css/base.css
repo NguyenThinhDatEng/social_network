@@ -34,3 +34,17 @@ ul {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+.text__wrapper {
+    height: 40px;
+    padding: 8px;
+    border-radius: 6px;
+    text-align: center;
+    line-height: 24px;
+}
+
+.text:hover {
+    color: var(--text--hover);
+    background-color: var(--wrapper--hover);
+    cursor: pointer;
+}

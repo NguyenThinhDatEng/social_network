@@ -1,5 +1,6 @@
 :root {
     --input__height: 40px;
+    --input--error: #EA3636;
     --border__radius: 6px;
     --border__color: #afafaf;
 }
@@ -15,6 +16,10 @@
 
 .input__wrapper {
     position: relative;
+}
+
+.input--error {
+    border: 1px solid var(--input--error) !important;
 }
 
 .input-login {

@@ -8,7 +8,7 @@
     <div v-if="isPassword" class="password-login">
       <input
         id="input"
-        :class="inputClass"
+        :class="[inputClass, { 'input--error': isError }]"
         :type="onEye ? 'password' : 'text'"
         :placeholder="placeholder || getPlaceholder()"
         :value="modelValue"
@@ -23,7 +23,7 @@
     <input
       v-else
       id="input"
-      :class="['input', inputClass]"
+      :class="['input', inputClass, { 'input--error': isError }]"
       :placeholder="placeholder || getPlaceholder()"
       :value="modelValue"
       @input="$emit('update:modelValue', $event.target.value)"

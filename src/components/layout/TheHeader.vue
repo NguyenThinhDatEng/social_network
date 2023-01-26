@@ -51,13 +51,18 @@ import SubButton from "@/components/base/button/VSubButton.vue";
 // Resources
 import Dictionary from "@/assets/js/resources/dictionary";
 import Resource from "@/assets/js/resources";
+import { getCookie } from "@/assets/js/common/function";
 
 export default {
   name: "TheHeader",
   components: { SearchInput, SubButton },
-  created() {},
   props: {},
   emits: [],
+
+  created() {
+    this.authenticateUser();
+  },
+
   methods: {
     /**
      * @description xử lý sự kiện khi ấn vào nút đăng nhập
@@ -66,6 +71,19 @@ export default {
     handleOnClickLogin: function () {
       this.isAuthorized = true;
       this.$router.push(Resource.routes.login);
+    },
+
+    /**
+     * @description xác thực người dùng
+     * @author NVThinh 25/1/2023
+     */
+    authenticateUser: function () {
+      let username = getCookie("username");
+      if (username == "TheWill") {
+        this.isAuthorized = true;
+      } else {
+        this.isAuthorized = false;
+      }
     },
   },
   data() {
@@ -80,8 +98,12 @@ export default {
 
 <style scoped>
 .header {
+  position: sticky;
+  top: 0;
   width: 100%;
   height: 56px;
+  background-color: #fff;
+  z-index: 1;
 }
 
 .header__content {

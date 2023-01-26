@@ -55,8 +55,6 @@ export default {
 :root {
   --toast__icon--background: #baeed4;
   --toast__icon--wrapper: #1ac871;
-  --toast--error__icon--background: #f59999;
-  --toast--error__icon--wrapper: #eb3333;
 }
 
 .toast__wrapper {
@@ -98,11 +96,11 @@ export default {
 }
 
 .toast--error .toast__icon--background {
-  background-color: var(--toast--error__icon--background);
+  background-color: #f59999;
 }
 
 .toast--error .toast__icon--wrapper {
-  background-color: var(--toast--error__icon--wrapper);
+  background-color: #eb3333;
 }
 
 .toast--error .icon--tick {
