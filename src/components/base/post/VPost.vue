@@ -1,6 +1,6 @@
 <template>
   <div class="post">
-    <div class="post__content">
+    <div class="post__content" @click="handleOnClickPost">
       <div class="post__header">
         <!-- font awesome icon -->
         <div class="post__header__avatar icon__wrapper">
@@ -14,12 +14,6 @@
       <div class="post__body">
         <div class="main-content">
           <h2 class="title">Writing a Great Post Title</h2>
-          <p class="description">
-            Think of your post title as a super short (but compelling!)
-            description — like an overview of the actual post in one short
-            sentence. Use keywords where appropriate to help ensure people can
-            find your post by search.
-          </p>
         </div>
         <div class="tags">
           <a href="" class="tag">#mysql</a>
@@ -51,7 +45,6 @@
           </div>
         </div>
         <!-- Right -->
-        <!-- :icon="['far', 'bookmark']" -->
         <div class="post__footer__right">
           <div class="item__icon icon__wrapper" @click="toggle">
             <font-awesome-icon class="center icon" :icon="getIcon()" />
@@ -96,6 +89,14 @@ export default {
     toggle: function () {
       this.data.saved = !this.data.saved;
     },
+
+    /**
+     * @description chuyển sang trang đọc post
+     * @author NVThinh 27/1/2023
+     */
+    handleOnClickPost: function () {
+      this.$router.push(`posts`);
+    },
   },
   data() {
     return {
@@ -114,6 +115,7 @@ export default {
   border: 1px solid #afafaf;
   border-radius: 6px;
   background-color: #fff;
+  cursor: pointer;
 }
 
 .post__header {

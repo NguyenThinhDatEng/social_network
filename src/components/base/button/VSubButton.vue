@@ -1,6 +1,6 @@
 <template>
   <div class="sub-button__wrapper">
-    <button class="button button--sub" :title="title">
+    <button class="button button--sub" :id="id" :title="title">
       {{ buttonContent }}
     </button>
   </div>
@@ -10,10 +10,14 @@
 export default {
   name: "ButtonOutline",
   props: {
-    title: String,
+    title: String, // Tooltip button
     buttonContent: {
       type: String,
       default: "click me",
+    }, // Nội dung button
+    id: {
+      type: String,
+      default: "",
     },
   },
   data() {
@@ -29,7 +33,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 4px;
+  border: none;
 }
 
 .button--sub {

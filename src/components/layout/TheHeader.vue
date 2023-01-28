@@ -6,7 +6,7 @@
       <!-- Bên trái -->
       <div class="left">
         <!-- Button -->
-        <button class="left__button">DEVELOPER</button>
+        <button class="left__button" @click="goHome">DEVELOPER</button>
         <!-- Input -->
         <SearchInput
           class="left__input"
@@ -15,7 +15,7 @@
       </div>
       <!-- Chưa đăng nhập -->
       <div class="right" v-if="!isAuthorized">
-        <!-- Button 1 -->
+        <!-- Button: Login -->
         <div class="login__wrapper" @click="handleOnClickLogin">
           {{ Dictionary.action.login.VN }}
         </div>
@@ -37,10 +37,13 @@
         <div class="icon__wrapper">
           <font-awesome-icon class="center icon" :icon="['far', 'bell']" />
         </div>
-        <!-- font awesome icon -->
-        <div class="icon__wrapper">
-          <font-awesome-icon class="center icon" :icon="['far', 'user']" />
-        </div>
+        <!-- Avatar -->
+        <router-link to="users">
+          <!-- font awesome icon -->
+          <div class="icon__wrapper">
+            <font-awesome-icon class="center icon" :icon="['far', 'user']" />
+          </div>
+        </router-link>
       </div>
     </div>
   </div>
@@ -74,10 +77,13 @@ export default {
      * @author NVThinh 23/1/2023
      */
     handleOnClickLogin: function () {
-      this.isAuthorized = true;
       this.$router.push(Resource.routes.login);
     },
 
+    /**
+     * @description Mở popup thêm mới bài đăng
+     * @author 28/1/2023
+     */
     handleOnClickCreatePost: function () {
       this.openPopup(0);
     },
@@ -112,6 +118,14 @@ export default {
     closePopup: function () {
       this.isShowPopup = false;
     },
+
+    /**
+     * @description quay về trang chủ
+     * @author 28/1/2023
+     */
+    goHome: function () {
+      this.$router.push("/");
+    },
   },
   data() {
     return {
@@ -132,7 +146,7 @@ export default {
   width: 100%;
   height: 56px;
   background-color: #fff;
-  z-index: 1;
+  z-index: 2;
 }
 
 .header__content {

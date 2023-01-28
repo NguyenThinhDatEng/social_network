@@ -17,12 +17,14 @@
       <!-- Popup footer  -->
       <div class="popup__footer">
         <ButtonMain
+          class="popup__footer__button"
           :title="Title.save"
           :button-content="Resource.ButtonContent.save"
           :type="Enum.Type.Main"
           @click="$emit('on-save')"
         ></ButtonMain>
         <ButtonMain
+          class="popup__footer__button"
           :title="Title.cancel"
           :button-content="Resource.ButtonContent.cancel"
           :type="Enum.Type.Secondary"
@@ -135,13 +137,21 @@ export default {
   border-radius: 4px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
   width: 864px;
+  max-height: 700px;
   background-color: #fff;
+  overflow: auto;
 }
 
 .popup__header {
+  position: sticky;
+  top: 0;
   display: flex;
   justify-content: space-between;
+  min-height: 60px;
   padding: 20px 16px;
+  border-bottom: 1px solid #afafaf;
+  background-color: #fff;
+  z-index: 1;
 }
 
 .popup__header span {
@@ -199,13 +209,15 @@ export default {
 }
 
 .popup__footer {
+  position: sticky;
+  bottom: 0;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: row-reverse;
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
-  height: 50px;
+  min-height: 60px;
   background-color: #f5f5f5;
   padding-right: 16px;
 }
@@ -241,5 +253,9 @@ input.input.input--error + .error-message {
 
 .popup__date {
   position: relative;
+}
+
+.popup__footer__button + .popup__footer__button {
+  margin-right: 20px;
 }
 </style>

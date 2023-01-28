@@ -49,10 +49,6 @@ export default {
 </script>
 
 <style scoped>
-.button--main {
-  margin-left: 8px;
-}
-
 .button--main,
 .button--main:focus {
   background-color: var(--default);

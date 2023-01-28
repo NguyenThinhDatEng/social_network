@@ -1,14 +1,19 @@
 @import url(font.css);
+@import url(./more/scrollbar.css);
 @import url(../../../node_modules/vue-select/dist/vue-select.css);
 
 :root {
     --text--hover: #2F3AB2;
     --wrapper--hover: #e5e6f6;
+    --input--radius: 4px
 }
 
 * {
     box-sizing: border-box;
     font-family: T Regular;
+}
+
+body {
     font-size: 15px
 }
 
@@ -16,6 +21,13 @@ body,
 p,
 ul {
     margin: 0;
+}
+
+textarea {
+    padding: 8px;
+    width: 100%;
+    outline: none;
+    border-radius: var(--input--radius);
 }
 
 ul {

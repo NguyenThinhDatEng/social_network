@@ -17,7 +17,27 @@
           :button-content="Dictionary.action.add.image.VN"
           @click="$refs.fileInput.click()"
         />
-        <img v-if="url" :src="url" class="preview" />
+        <div v-else class="preview">
+          <!-- image preview -->
+          <img :src="url" class="preview__image" />
+          <!-- Buttons -->
+          <div class="img--update">
+            <!-- Button: Change -->
+            <SubButton
+              class="img__button"
+              :id="'button--change'"
+              :button-content="Dictionary.action.change.VN"
+              @click="$refs.fileInput.click()"
+            />
+            <!-- Button: Remove -->
+            <SubButton
+              class="img__button"
+              :id="'button--remove'"
+              :button-content="Dictionary.action.remove.VN"
+              @click="removeImg"
+            />
+          </div>
+        </div>
       </div>
       <!-- The title of post -->
       <div class="title">
@@ -96,8 +116,20 @@ export default {
 
     onUpload: function () {},
 
-    onClickOutside() {
+    /**
+     * @description Đóng popup khi click ra ngoài post
+     * @author NVThinh 26/1/2023
+     */
+    onClickOutside: function () {
       this.closePopup();
+    },
+
+    /**
+     * @description Hủy bỏ thêm ảnh
+     * @author NVThinh 26/1/2023
+     */
+    removeImg: function () {
+      this.url = "";
     },
   },
   data() {
@@ -127,13 +159,23 @@ export default {
   margin-bottom: 16px;
 }
 
-.post-detail .title {
-  font-family: T Bold;
+.preview {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
-.preview {
+.preview__image {
   max-width: 100%;
   max-height: 200px;
+}
+
+.img--update {
+  display: flex;
+}
+
+.post-detail .title {
+  font-family: T Bold;
 }
 
 .title__input,
@@ -158,5 +200,9 @@ export default {
 
 .post__content::placeholder {
   font-size: 18px;
+}
+
+.img__button + .img__button {
+  margin-left: 12px;
 }
 </style>
